@@ -1,15 +1,14 @@
 # 版本对比
 在3.4.0版本之前，Mybatis-Plus的插件是通过实现MyBatis的接口 `Interceptor`实现的，因此，在使用时，需要手动注册每个插件的bean。
-![](../../../pic/mybatis-plus/mp-interceptor-1.png)
-在3.4.0版本后，Mybatis-Plus可能出于拓展性以及插件执行顺序的考虑，自己实现了一套拦截器，原理是在
-Mybatis的拦截器链中，又套了一层拦截器链
+![](../../../pic/mybatis-plus/mp-interceptor-1.png)  
+在3.4.0版本后，Mybatis-Plus可能出于拓展性以及插件执行顺序的考虑，自己实现了一套拦截器，原理是在Mybatis的拦截器链中，又套了一层拦截器链  
 Mybatis-Plus 实现了Mybatis的拦截器---->`MybatisPlusInterceptor`
-![](../../../pic/mybatis-plus/mp-interceptor-2.png)
+![](../../../pic/mybatis-plus/mp-interceptor-2.png)  
 在此拦截器中内部又实现了拦截器链，用于用户自己拓展插件，也更容易控制顺序。
 内部拦截器 `InnerInterceptor`
-![](../../../pic/mybatis-plus/mp-interceptor-3.png)
-实现了很多拦截器
-官网上很详细。注意顺序
+![](../../../pic/mybatis-plus/mp-interceptor-3.png)  
+实现了很多拦截器  
+官网上很详细。注意顺序  
 ![](../../../pic/mybatis-plus/mp-interceptor-4.png)
 # 使用方法
 ```java
