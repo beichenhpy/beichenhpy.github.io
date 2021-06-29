@@ -24,7 +24,7 @@
 2. 配置文件
 提供了文件生成网站：[ssl-conf](https://ssl-config.ohttps.com/#server=nginx)
 将配置文件放在`/etc/nginx/conf.d/ssh.conf`  
-```
+``` nginx configuration
 server {
     listen 80 default_server;
     listen [::]:80 default_server;
