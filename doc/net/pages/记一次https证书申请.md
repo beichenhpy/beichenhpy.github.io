@@ -24,16 +24,15 @@
 2. 配置文件
 提供了文件生成网站：[ssl-conf](https://ssl-config.ohttps.com/#server=nginx)
 将配置文件放在`/etc/nginx/conf.d/ssh.conf`  
-   
 
-``` nginx configuration
+
+```
 server {
     listen 80 default_server;
     listen [::]:80 default_server;
 
     return 301 https://$host$request_uri;
 }
-
 server {
     listen 443 ssl http2;
     listen [::]:443 ssl http2;
@@ -64,5 +63,5 @@ server {
 
     # replace with the IP address of your resolver
     resolver 127.0.0.1;
-}
+} 
 ```
