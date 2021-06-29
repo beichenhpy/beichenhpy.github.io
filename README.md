@@ -4,5 +4,6 @@
 
 ### 目录 🏡
 
-- [Mybatis](mybatis/tabbar.md)
+- [Mybatis](doc/mybatis/tabbar.md)
+- [Mybatis-Plus](doc/mybatis-plus/tabbar.md)
 
