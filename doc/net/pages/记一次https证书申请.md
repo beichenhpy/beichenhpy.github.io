@@ -23,8 +23,8 @@
    - 中间文件：`/etc/nginx/cert/fullchain.cer`
 2. 配置文件
 提供了文件生成网站：[ssl-conf](https://ssl-config.ohttps.com/#server=nginx)
-将配置文件放在`/etc/nginx/conf.d/ssh.conf`
-```shell
+将配置文件放在`/etc/nginx/conf.d/ssh.conf`  
+```
 # generated 2021-06-29, Mozilla Guideline v5.6, nginx 1.17.7, OpenSSL 1.1.1d, intermediate configuration
 # https://ssl-config.ohttps.com/#server=nginx&version=1.17.7&config=intermediate&openssl=1.1.1d&guideline=5.6
 server {
