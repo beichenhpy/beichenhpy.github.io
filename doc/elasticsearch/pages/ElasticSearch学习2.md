@@ -1,25 +1,28 @@
-## 上一次学到了安装ElasticSearch,由于版本兼容问题，最后选择了6.8.12
-## 这次将学习搭建一个java后台，使用java api的方法来新建索引
-### 一、环境及相关文档
-#### 1、相关文档 
+前言💡  
+上一次学到了安装ElasticSearch,由于版本兼容问题，最后选择了6.8.12  
+这次将学习搭建一个java后台，使用java api的方法来新建索引
+# 一、环境及相关文档
+## 相关文档 
 - [springboot2.2整合spring-data-elasticsearch3.2](https://blog.csdn.net/haohaifeng002/article/details/102887921)
 - [Spring Data Elasticsearch](https://docs.spring.io/spring-data/elasticsearch/docs/current/reference/html/#preface.versions)
 - [IK分词器](https://github.com/medcl/elasticsearch-analysis-ik)
-#### 2、环境
+
+## 环境
 本次环境使用 `spring boot`快速搭建，使用`sping-data-elasticsearch` 作为client进行与es服务端交互。
 由于`elasticsearch`版本迭代很快，所以需要进行文档的查询
 相关版本对应关系  
 ![version](../../../pic/elasticsearch/elasticsearch-1.png)  
 **由于版本原因，采用了`Moore`版本-------->对应版本为 Spring Data Elasticsearch 3.2.x + Elasticsearch 6.8.12 + Spring Boot 2.2.x**
-#### 3、安装IK中文分词插件
+## 安装IK中文分词插件
 **确保安装的分词插件与Elasticsearch版本一致**
 这里选择的是推荐方式一安装的，方式二可能会有问题
 1、下载对应release版本的插件 [6.8.12 plugin下载](https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.8.12/elasticsearch-analysis-ik-6.8.12.zip)
 2、`cd /opt/elasticsearch-6.8.12/plugins/ && mkdir ik`
 3、解压 `unzip /opt/elasticsearch-analysis-ik-6.8.12.zip -d . `
 4、重启Elasticsearch
-### 二、项目配置
-#### 1、pom文件
+
+# 二、项目配置
+## 1、pom文件
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -91,7 +94,7 @@
 
 </project>
 ```
-#### 2、配置文件
+## 2、配置文件
 ```yaml
 server:
   port: 8888
@@ -100,7 +103,7 @@ spring:
     rest:
       uris: http://es.beichenhpy.cn
 ```
-#### 3、实体类设置（对应索引）
+## 3、实体类设置（对应索引）
 ```java
 package cn.beichenhpy.es.entity;
 
@@ -181,7 +184,7 @@ public class Book {
 }
 
 ```
-4、建立Repo接口（等同于Spring Boot Data Jpa）
+## 4、建立Repo接口（等同于Spring Boot Data Jpa）
 ```java
 package cn.beichenhpy.es.repo;
 
@@ -199,7 +202,7 @@ public interface ESSaveRepo extends ElasticsearchRepository<Student,Integer> {
 }
 
 ```
-5、建立控制层(方便测试，先写在控制层，以后会分层)
+## 5、建立控制层(方便测试，先写在控制层，以后会分层)
 ```java
 package cn.beichenhpy.es.controller;
 
