@@ -41,10 +41,10 @@ private Date birthday;
 
 ```
 ### 小结
-| 注解            | 适用范围                                                     |
-| --------------- | ------------------------------------------------------------ |
-| @JsonFormat     | 序列化和反序列化均可，需要满足pattern的类型才能转换          |
-| @DateTimeFormat | 只有反序列化生效将String转为Date，传值需要满足类型 yyyy-MM-dd'T'HH:mm:ss.SSSX","yyyy-MM-dd'T'HH:mm:ss.SSS","EEE, dd MMM yyyy HH:mm:ss zzz","yyyy-MM-dd" |
+| 注解            | 适用范围                                                    |  
+| --------------- | ------------------------------------------------------------ |  
+| @JsonFormat     | 序列化和反序列化均可，需要满足pattern的类型才能转换          |  
+| @DateTimeFormat | 只有反序列化生效将String转为Date，传值需要满足类型 yyyy-MM-dd'T'HH:mm:ss.SSSX","yyyy-MM-dd'T'HH:mm:ss.SSS","EEE, dd MMM yyyy HH:mm:ss zzz","yyyy-MM-dd" |  
 # 总结
 `@DateTimeFormat`很鸡肋 只能格式化特殊的四种日期格式
 大部分的需求都可以使用 `@JsonFormat`解决
