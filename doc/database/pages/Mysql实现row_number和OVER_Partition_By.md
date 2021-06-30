@@ -1,4 +1,5 @@
 # 0x00 初始化表
+
 ```sql
 CREATE TABLE `test` (
   `month` varchar(100) DEFAULT NULL,
@@ -13,8 +14,11 @@ INSERT INTO lgaic_yf_test.test (`month`,count) VALUES
 	 ('202002',1),
 	 ('202002',1);
 ```
+
 # 0x01 实现row_number()
-具体的思路就是，初始化变量为0，一次递加
+
+具体的思路就是，初始化变量为0，一次递加  
+
 ```sql
 -- row_number()
 select x.*,(@r:=@r+1) as rank  from (
@@ -58,14 +62,17 @@ from
 		@r := 0) rt
 		)z
 ```
+
 ## 拓展
 根据上面的按month分组后，就可以取到，每个month对应的count前几名
+
 ```sql
 select *
 from z
 -- 前两名
 where z.rank in (1,2)
 ```
+
 # 0x03 引用
 [MySQL如何实现row_number()及row_number over(partition by column)](https://blog.csdn.net/zhouseawater/article/details/90697305)
 [postgresql OVER() Partition By Order By](https://blog.csdn.net/u010773514/article/details/102581055)
