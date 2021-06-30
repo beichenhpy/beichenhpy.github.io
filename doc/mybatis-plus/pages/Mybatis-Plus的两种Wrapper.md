@@ -54,7 +54,7 @@ queryWrapper.eq(User::getName(),"梨花");
 上面新建了一个wrapper调用了eq方法  
 这里的eq将会流向他的父类--->`AbstractLambdaWrapper` 然后在父类中并没有找到此方法  
 所以流向父类--->`AbstractWrapper<T, SFunction<T, ?>, Children>`  
-注意此处的泛型 `R` 已经被替换为了 ` SFunction<T, ?>`  
+注意此处的泛型`R`已经被替换为了`SFunction<T, ?>`  
 因此将会对`AbstractWrapper`中的所有`R`的泛型赋予类型，现在查看顶层类中的 `eq方法`  
 
 ```java
@@ -111,4 +111,4 @@ queryWrapper.eq(User::getName(),"梨花");
 根据Java类调用原理：【子类可以调用父辈类的protected/public的方法，并且方法调用会先从子类重写的方法开始找  
 会优先使用该类或者该类的父辈类重写的方法，如果没有重写方法，就默认使用顶层类的方法。  
 所以会从 `LambdaQueryWrapper` 开始寻找，如果没有则去父类`AbstractLambdaWrapper`中寻找 `columnToString`方法找到了就执行，【否则就先当于本类的内部方法调用】  
-具体代码见 文章 《为了将某实体类的成员变量换为下划线》最后的代码》
+具体代码见 文章 [为了将某实体类的成员变量换为下划线](为了将某实体类的成员变量换为下划线.md)
