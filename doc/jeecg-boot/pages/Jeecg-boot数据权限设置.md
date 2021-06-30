@@ -3,7 +3,7 @@
 
 1. 在菜单管理中 选择要设置权限的子菜单  
 ![pic1](../../../pic/jeecg-boot/data-permission-1.png)  
-2. 点击数据规则 
+2. 点击数据规则  
 ![pic2](../../../pic/jeecg-boot/data-permission-2.png)  
 3. 新建一个如图所示的规则（以部门分离为例）
 sysOrgCode 右模糊 #{sys_org_code} 这样就可以上级查询下级的信息 
