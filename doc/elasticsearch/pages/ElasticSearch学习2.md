@@ -16,10 +16,11 @@
 这里选择的是推荐方式一安装的，方式二可能会有问题
 1、下载对应release版本的插件 [6.8.12 plugin下载](https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.8.12/elasticsearch-analysis-ik-6.8.12.zip)
 2、`cd /opt/elasticsearch-6.8.12/plugins/ && mkdir ik`
-3、解压 ` unzip /opt/elasticsearch-analysis-ik-6.8.12.zip -d . `
+3、解压 `unzip /opt/elasticsearch-analysis-ik-6.8.12.zip -d . `
 4、重启Elasticsearch
-### **二、项目配置**
+### 二、项目配置
 #### 1、pom文件
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -89,7 +90,6 @@
     </build>
 
 </project>
-
 ```
 #### 2、配置文件
 ```yaml
@@ -249,4 +249,3 @@ public class StudentController {
 }
 
 ```
-### 
