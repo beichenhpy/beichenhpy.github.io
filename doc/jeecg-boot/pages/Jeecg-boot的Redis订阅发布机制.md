@@ -3,7 +3,8 @@
 ## 1.1、全局变量
 
 1. 频道topic名
-1. 处理器handler名
+2. 处理器handler名
+
 ```java
 public class GlobalConstants {
 
