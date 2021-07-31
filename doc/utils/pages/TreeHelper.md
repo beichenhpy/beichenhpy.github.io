@@ -1,6 +1,6 @@
 # 【工具类】查询树形结构
 ## 表结构如下:
-````
+```MySQL
 CREATE TABLE `tree` (
   `id` int NOT NULL,
   `parent_id` int DEFAULT NULL,
@@ -16,9 +16,9 @@ INSERT INTO tree values (4,1,'二级目录-1');
 INSERT INTO tree values (5,2,'二级目录-2');
 INSERT INTO tree values (6,2,'二级目录-2');
 INSERT INTO tree values (7,2,'二级目录-2');
-````
-## 工具类如下：
 ```
+## 工具类如下：
+```java
 package cn.beichenhpy.util;
 
 import cn.beichenhpy.enums.SqlConstant;
@@ -186,7 +186,7 @@ public class TreeHelper<T extends TreeHelper.Tree, M extends BaseMapper<T>> {
 新建一个子类继承于`TreeHelper.Tree`
 
 `TreeHelper`
-```
+```java
 package cn.beichenhpy.modal;
 
 import cn.beichenhpy.util.TreeHelper;
@@ -208,7 +208,7 @@ public class TreeInfo extends TreeHelper.Tree{
 }
 ```
 `Controller`
-```
+```java
 package cn.beichenhpy.controller;
 
 import cn.beichenhpy.mapper.TreeMapper;
@@ -239,14 +239,14 @@ public class ConsumerController {
 2. 有缓存，需要注册bean
    
 `注册bean`
-```
+```java
 @Bean
 public TreeHelper<TreeInfo, TreeMapper> treeHelper(){
     return new TreeHelper<>();
 }
 ```
 `Test`
-```
+```java
 @Autowired
 TreeHelper<TreeInfo,TreeMapper> treeHelper;
 @Autowired
