@@ -92,7 +92,7 @@
 
 1. 采用Webscoket连接，用户订阅`/video/{vid}`
 2. 根据`vid`创建对应的`Map`存储，`vid`和对应的`websocket-session`
-3. 发送给后台消息，带有视频的`userId`
+3. 发送给后台消息，带有用户的信息的`userId`
 4. 根据`vid`发送到Redis，利用视频的`vid`作为key，使用Redis的`set`数据结构,存储`userId`，通过`scard key` 查看在线人数
 5. 通过heatbeat刷新，或者定时刷新。
 6. 用户关闭标签，断开websocket服务，带上`vid`告知，移除Redis中的对应的`vid`作为key的`userId`
